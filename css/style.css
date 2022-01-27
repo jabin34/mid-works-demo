@@ -22,7 +22,7 @@
     
     #hero-section {
         /* background:linear-gradient(to top left, rgb(24, 22, 22),rgb(14, 9, 9)); */
-        background-image: url(/assets/images/bg-img.jpeg);
+        background-image: url(../assets/images/bg-img.jpeg);
         background-repeat: no-repeat;
         background-size: cover;
         padding: 96px;
