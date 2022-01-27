@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- bootstrap cdn -->
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top bg-white shadow-sm d-lg-inline-flex fw-bold mb-5">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"> <img src="assets/images/logo.svg" alt="" width="178" height="44" class="d-inline-block align-text-top"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse  nav-parent" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0  nav-child  ">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">ホーム</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> 案件一覧</a>
+                        </li>
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        案件特集
+                    </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Midworksについて
+                    </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        正社員並みの保障
+                    </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">お役立ち情報</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">ログイン</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                    <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">ログイン</a>
+                  </li> -->
+
+
+                    </ul>
+                    <!-- <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form> -->
+                </div>
+            </div>
+        </nav>
+        <!-- hero image section -->
+        <section id="hero-section">
+            <div class="container-fluid  vh-100 ">
+                <div class="row p-5">
+                    <!-- <div class="col-md-6 p-5 d-flex flex-column justify-content-center align-items-center">
+                        <h3 class="text-white ">
+                            正社員でフリーランスな </h3>
+                        <h3 class="text-white ">エンジニアライフを </h3>
+                        <h3 class="text-white"> Midworksで実現</h3>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+    </header>
+    <main>
+        <section class="container-fluid bg-dark  p-5">
+            <!-- osusume section -->
+            <div class="d-flex   flex-row justify-content-between  g-3">
+                <div class="tablink flex-grow-1 text-center " onclick="projectSearch('skill', this)" id="defaultOpen">
+                    <span class="full-text">スキルで選ぶ</span>
+                    <span class="short-text">スキル</span>
+                </div>
+                <div class="tablink flex-grow-1 text-center" onclick="projectSearch('position', this)">
+                    <span class="full-text"> ポジションで選ぶ</span>
+                    <span class="short-text"> ポジション</span>
+                </div>
+                <div class="tablink flex-grow-1 text-center" onclick="projectSearch('area', this)">
+                    <span class="full-text">エリアで選ぶ</span>
+                    <span class="short-text">エリア</span>
+                </div>
+                <div class="tablink flex-grow-1 text-center" onclick="projectSearch('commitment', this)">
+                    <span class="full-text">こだわりで選ぶ</span>
+                    <span class="short-text">こだわり</span>
+                </div>
+            </div>
+            <div class="mx-auto ">
+                <!-- skil div -->
+                <div id="skill" class="tabcontent ">
+                    <div class="row">
+                        <div class="col-6 col-md-3">
+                            <div class="d-flex flex-column justify-content-start align-items-start p-3 gap-3 ms-3">
+                                <label class="">
+                    <input class="form-check-input me-1" type="checkbox" value="">
+                    PHP
+                  </label>
+                                <label class="">
+                    <input class="form-check-input me-1" type="checkbox" value="">
+                    JavaScript
+                  </label>
+                                <label class="">
+                    <input class="form-check-input me-1" type="checkbox" value="">
+                    MySQL
+                  </label>
+                                <label class="">
+                    <input class="form-check-input me-1" type="checkbox" value="">
+                    iOS
+                  </label>
+
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="d-flex flex-column justify-content-start align-items-start p-3 gap-3 ms-3">
+                                <label class="">
+                    <input class="form-check-input me-1" type="checkbox" value="">
+                    Java
+                  </label>
+                                <label class="">
+                    <input class="form-check-input me-1" type="checkbox" value="">
+                    HTML5
+                  </label>
+                                <label class="">
+                    <input class="form-check-input me-1" type="checkbox" value="">
+                    Linux
+                  </label>
+                                <label class="">
+                    <input class="form-check-input me-1" type="checkbox" value="">
+                    Android
+                  </label>
+
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="d-flex flex-column justify-content-start align-items-start p-3 gap-3 ms-3">
+                                <label class="">
+                    <input class="form-check-input me-1" type="checkbox" value="">
+                    Python
+                  </label>
+                                <label class="">
+                    <input class="form-check-input me-1" type="checkbox" value="">
+                    CSS3
+                  </label>
+                                <label class="">
+                    <input class="form-check-input me-1" type="checkbox" value="">
+                    AWS
+                  </label>
+                                <label class="">
+                    <input class="form-check-input me-1" type="checkbox" value="">
+                    Ruby
+                  </label>
+
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="d-flex flex-column justify-content-start align-items-start p-3 gap-3 ms-3">
+                                <label class="">
+                    <input class="form-check-input me-1" type="checkbox" value="">
+                    Pearl
+                  </label>
+                                <label class="">
+                    <input class="form-check-input me-1" type="checkbox" value="">
+                    React
+                  </label>
+                                <label class="">
+                    <input class="form-check-input me-1" type="checkbox" value="">
+                   Windows Server
+                  </label>
+                                <label class="">
+                    <input class="form-check-input me-1" type="checkbox" value="">
+                    RPA
+                  </label>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- position tab -->
+                <div id="position" class="tabcontent">
+                    <div class="row">
+                        <div class="col-6 col-md-3">
+                            <div class="d-flex flex-column justify-content-start align-items-start p-3 gap-3 ms-3">
+                                <label class="">
+                   <input class="form-check-input me-1" type="checkbox" value="">
+                    フロントエンドエンジニア
+                 </label>
+                                <label class="">
+                   <input class="form-check-input me-1" type="checkbox" value="">
+                   サーバーエンジニア
+                 </label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="d-flex flex-column justify-content-start align-items-start p-3 gap-3 ms-3">
+                                <label class="">
+                   <input class="form-check-input me-1" type="checkbox" value="">
+                   サーバーサイドエンジニア
+                 </label>
+                                <label class="">
+                   <input class="form-check-input me-1" type="checkbox" value="">
+                   企画・マーケティング
+                 </label>
+
+
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="d-flex flex-column justify-content-start align-items-start p-3 gap-3 ms-3">
+                                <label class="">
+                   <input class="form-check-input me-1" type="checkbox" value="">
+                   スマホアプリ開発（ネイティブ）エンジニア
+                 </label>
+                                <label class="">
+                   <input class="form-check-input me-1" type="checkbox" value="">
+                   Webディレクター・プロデューサー
+                 </label>
+
+
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="d-flex flex-column justify-content-start align-items-start p-3 gap-3 ms-3">
+                                <label class="">
+                   <input class="form-check-input me-1" type="checkbox" value="">
+                   アナリスト（データサイエンティスト）
+                 </label>
+                                <label class="">
+                   <input class="form-check-input me-1" type="checkbox" value="">
+                   UI・UXデザイナー
+                 </label>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="area" class="tabcontent">
+                    <h1>Tokyo</h1>
+                    <p>Tokyo is the capital of Japan.</p>
+                </div>
+                <!-- commitment -->
+                <div id="commitment" class="tabcontent">
+                    <div class="row">
+                        <div class="col-6 col-md-3">
+                            <div class="d-flex flex-column justify-content-start align-items-start p-3 gap-3 ms-3">
+                                <label class="">
+                   <input class="form-check-input me-1" type="checkbox" value="">
+                   週1 ~ 2日
+                 </label>
+                                <label class="">
+                   <input class="form-check-input me-1" type="checkbox" value="">
+                   50万〜
+                 </label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="d-flex flex-column justify-content-start align-items-start p-3 gap-3 ms-3">
+                                <label class="">
+                   <input class="form-check-input me-1" type="checkbox" value="">
+                   週3 ~ 4日
+                 </label>
+                                <label class="">
+                   <input class="form-check-input me-1" type="checkbox" value="">
+                   60万〜
+                 </label>
+
+
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="d-flex flex-column justify-content-start align-items-start p-3 gap-3 ms-3">
+                                <label class="">
+                   <input class="form-check-input me-1" type="checkbox" value="">
+                   週5日
+                 </label>
+                                <label class="">
+                   <input class="form-check-input me-1" type="checkbox" value="">
+                   70万〜
+                 </label>
+
+
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="d-flex flex-column justify-content-start align-items-start p-3 gap-3 ms-3">
+                                <label class="">
+                   <input class="form-check-input me-1" type="checkbox" value="">
+                   40万〜
+                 </label>
+                                <!-- <label class="">
+                   <input class="form-check-input me-1" type="checkbox" value="">
+                   UI・UXデザイナー
+                 </label> -->
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- search  -->
+            <div class="d-flex search-form pt-3 rounded">
+                <input type="text" name="" id="search_keywords" placeholder="フリーワードを入力" class="search-form col-10" onchange="changeKeywordsName(this.value)">
+                <input type="submit" value="検索" class=" search-btn custom-color col-2 " data-disable-with="検索"></div>
+
+            </div>
+        </section>
+        <!-- tags -->
+        <section class="shadow-sm py-3 mb-4">
+            <div class="container">
+                <div class="row align-items-center j g-3 ">
+                    <span class="col-md-4 font-weight-bold  ">おすすめワード</span>
+                    <div class="recomend-btn col-md-8 ">
+                        <a class="btn btn-light mx-auto ga_home_feature8" href="/feature/8">大阪</a>
+                        <a class="btn btn-light mx-auto ga_home_feature7" href="/feature/7">リモート可</a>
+                        <a class="btn btn-light mx-auto ga_home_feature1" href="/feature/1">週3日</a>
+                        <a class="btn btn-light mx-auto ga_home_feature2" href="/feature/2">高単価</a>
+                        <a class="btn btn-light mx-auto ga_home_feature5" href="/feature/5">Ruby</a>
+                        <a class="btn btn-light mx-auto ga_home_feature9" href="/feature/9">Java</a>
+                        <a class="btn btn-light mx-auto ga_home_feature3" href="/feature/3">スマホ</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- project list -->
+        <section class="font-weight-bold mb-5">
+            <div class="container ps-3 text-grey">
+                <h3 class="p-3 m-2">新着案件</h3>
+            </div>      
+            <!-- slider -->
+            <div class="container text-center my-0">
+
+                <div class=" mx-auto my-auto justify-content-center">
+                    <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner gap-3  p-4 me-2 g-4 " role="listbox">
+                            <div class="carousel-item active mx-3 p-2">
+                                <div class="col-md-4 mx-1  ">
+                                    <div class="card  mb-3  shadow-sm  card-font h-100 ">
+                                        <div class="text-white card-headColor p-2 font-weight-bold">
+                                            <P>
+                                                1【コンサル】エッジAIおよびリスクアセスメントに関連した設計支援、コンサルティング業務
+                                            </P>
+                                        </div>
+                                        <div class="text-grey">
+                                            <div class="py-3 px-2">
+                                                <div class="row mb-2">
+                                                    <div class="col-sm-4 font-weight-bold">単価/月</div>
+                                                    <div class="col-sm-8"><span class="h6 font-weight-bold text-pinkishred">~ 65万円</span></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-4 font-weight-bold">勤務地</div>
+                                                    <div class="col-sm-8">青山一丁目駅 (港区)</div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body border-top">
+                                                <div class="row text-grey">
+                                                    <div class="col-sm-4 font-weight-bold">開発環境</div>
+                                                    <div class="col-sm-8"><a class="tag-small mr-2 mb-2 btn btn-light" href="/skills/250">VBA/VBS</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item ">
+                                <div class="col-md-4 mx-1">
+                                    <div class="card   mb-3  shadow-sm  card-font h-100">
+                                        <div class="text-white card-headColor p-2 font-weight-bold">
+                                            <P>
+                                                2【Java(FWなし)】某映像配信サービスシステムの開発支援
+                                            </P>
+                                        </div>
+                                        <div class="text-grey">
+                                            <div class="py-3 px-2">
+                                                <div class="row mb-2">
+                                                    <div class="col-sm-4 font-weight-bold">単価/月</div>
+                                                    <div class="col-sm-8"><span class="h6 font-weight-bold text-pinkishred">~ 65万円</span></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-4 font-weight-bold">勤務地</div>
+                                                    <div class="col-sm-8">青山一丁目駅 (港区)</div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body border-top">
+                                                <div class="row text-grey">
+                                                    <div class="col-sm-4 font-weight-bold">開発環境</div>
+                                                    <div class="col-sm-8"><a class="tag-small mr-2 mb-2 btn btn-light" href="/skills/250">VBA/VBS</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item ">
+                                <div class="col-md-4 mx-1 ">
+                                    <div class="card   mb-3  shadow-sm  card-font h-100">
+                                        <div class="text-white card-headColor p-2 font-weight-bold">
+                                            <P>
+                                                3【生命保険会社次期システム開発
+                                            </P>
+                                        </div>
+                                        <div class="text-grey">
+                                            <div class="py-3 px-2">
+                                                <div class="row mb-2">
+                                                    <div class="col-sm-4 font-weight-bold">単価/月</div>
+                                                    <div class="col-sm-8"><span class="h6 font-weight-bold text-pinkishred">~ 65万円</span></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-4 font-weight-bold">勤務地</div>
+                                                    <div class="col-sm-8">青山一丁目駅 (港区)</div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body border-top">
+                                                <div class="row text-grey">
+                                                    <div class="col-sm-4 font-weight-bold">開発環境</div>
+                                                    <div class="col-sm-8"><a class="tag-small mr-2 mb-2 btn btn-light" href="/skills/250">VBA/VBS</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item ">
+                                <div class="col-md-4 mx-1 ">
+                                    <div class="card   mb-3  shadow-sm  card-font h-100 ">
+                                        <div class="text-white card-headColor p-2 font-weight-bold">
+                                            <P>
+                                                4【コンサル】エッジAIおよびリスクアセスメントに関連した設計支援、コンサルティング業務
+                                            </P>
+                                        </div>
+                                        <div class="text-grey">
+                                            <div class="py-3 px-2">
+                                                <div class="row mb-2">
+                                                    <div class="col-sm-4 font-weight-bold">単価/月</div>
+                                                    <div class="col-sm-8"><span class="h6 font-weight-bold text-pinkishred">~ 65万円</span></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-4 font-weight-bold">勤務地</div>
+                                                    <div class="col-sm-8">青山一丁目駅 (港区)</div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body border-top">
+                                                <div class="row text-grey">
+                                                    <div class="col-sm-4 font-weight-bold">開発環境</div>
+                                                    <div class="col-sm-8"><a class="tag-small mr-2 mb-2 btn btn-light" href="/skills/250">VBA/VBS</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item ">
+                                <div class="col-md-4 mx-1 ">
+                                    <div class="card   mb-3  shadow-sm  card-font h-100">
+                                        <div class="text-white card-headColor p-2 font-weight-bold">
+                                            <P>
+                                                5【コンサル】エッジAIおよびリスクアセスメントに関連した設計支援、コンサルティング業務
+                                            </P>
+                                        </div>
+                                        <div class="text-grey">
+                                            <div class="py-3 px-2">
+                                                <div class="row mb-2">
+                                                    <div class="col-sm-4 font-weight-bold">単価/月</div>
+                                                    <div class="col-sm-8"><span class="h6 font-weight-bold text-pinkishred">~ 65万円</span></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-4 font-weight-bold">勤務地</div>
+                                                    <div class="col-sm-8">青山一丁目駅 (港区)</div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body border-top">
+                                                <div class="row text-grey">
+                                                    <div class="col-sm-4 font-weight-bold">開発環境</div>
+                                                    <div class="col-sm-8"><a class="tag-small mr-2 mb-2 btn btn-light" href="/skills/250">VBA/VBS</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="carousel-item ">
+                                <div class="col-md-4 mx-1">
+                                    <div class="card   mb-3  shadow-sm  card-font h-100 ">
+                                        <div class="text-white card-headColor p-2 font-weight-bold">
+                                            <P>
+                                                6【コンサル】エッジAIおよびリスクアセスメントに関連した設計支援、コンサルティング業務
+                                            </P>
+                                        </div>
+                                        <div class="text-grey">
+                                            <div class="py-3 px-2">
+                                                <div class="row mb-2">
+                                                    <div class="col-sm-4 font-weight-bold">単価/月</div>
+                                                    <div class="col-sm-8"><span class="h6 font-weight-bold text-pinkishred">~ 65万円</span></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-4 font-weight-bold">勤務地</div>
+                                                    <div class="col-sm-8">青山一丁目駅 (港区)</div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body border-top">
+                                                <div class="row text-grey">
+                                                    <div class="col-sm-4 font-weight-bold">開発環境</div>
+                                                    <div class="col-sm-8"><a class="tag-small mr-2 mb-2 btn btn-light" href="/skills/250">VBA/VBS</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                        <a class="carousel-control-prev bg-transparent w-aut " href="#recipeCarousel" role="button" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon text-grey" aria-hidden="true"></span>
+                        </a>
+                        <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
+                            <span class="carousel-control-next-icon text-grey" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- button -->
+
+                <div class="project-button ">
+                    <a class="new-project-button" href="#">
+                        全ての案件を見る <span class="ms-1"><i class="fa fa-chevron-right"></i></span>
+                        
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- user interView -->
+        <section>
+            <div class="container">
+                <h3 class="p-3 m-2 text-midnight-blue">ご利用者インタビュー</h3>
+            </div> 
+             <!--user carosoul  -->
+           <div class="container">
+            <div class=" mx-auto my-auto justify-content-center">
+                <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner gap-3  p-4 me-2 g-4 " role="listbox">
+                        <div class="carousel-item active ">
+                            <div class="col-md-4  mx-3 p-2 ">
+                                <div class="card thumbnail" >
+                                    <img src="assets/images/user1.jpeg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text text-grey font-weight-bold">【PR】理想的なエンジニア像を描き、自由な働き方を求めてフリーランスへ。</p>
+                                    </div>
+                                  </div>
+                                
+                            </div>
+                        </div>
+                        <div class="carousel-item ">
+                            <div class="col-md-4 mx-3 p-2">
+                                <div class="card thumbnail" >
+                                    <img src="assets/images/user2.jpeg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text text-grey font-weight-bold">【PR】理想的なエンジニア像を描き、自由な働き方を求めてフリーランスへ。</p>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item ">
+                            <div class="col-md-4  mx-3 p-2 ">
+                                <div class="card thumbnail" >
+                                    <img src="assets/images/user3.jpeg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text text-grey font-weight-bold">【PR】理想的なエンジニア像を描き、自由な働き方を求めてフリーランスへ。</p>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item ">
+                            <div class="col-md-4 mx-3 p-2 ">
+                                <div class="card thumbnail" >
+                                    <img src="assets/images/user4.jpeg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text text-grey font-weight-bold">【PR】理想的なエンジニア像を描き、自由な働き方を求めてフリーランスへ。</p>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item ">
+                            <div class="col-md-4 mx-3 p-2 ">
+                                <div class="card thumbnail" >
+                                    <img src="assets/images/user5.jpeg" class="card-img-top image" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text text-grey font-weight-bold">【PR】理想的なエンジニア像を描き、自由な働き方を求めてフリーランスへ。</p>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <a class="carousel-control-prev bg-transparent w-aut " href="#recipeCarousel" role="button" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon text-grey" aria-hidden="true"></span>
+                    </a>
+                    <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
+                        <span class="carousel-control-next-icon text-grey" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+            <!-- button -->
+
+            <div class="project-button ">
+                <a class="new-user-button" href="#">
+                    ご利用者の声をもっと見る <span class="ms-1"><i class="fa fa-chevron-right"></i></span>
+                    
+                </a>
+            </div>
+           </div>
+           
+
+        </section>
+        <!-- useful information -->
+            <section class="container mt-3 p-3 ">
+                <div class="container">
+                    <div class="row ps-3">
+                        <h3 class=" title-plain font-weight-bold  my-5 text-midnight-blue">お役立ち情報</h3>
+                    </div>
+                  
+                    <div class="mb-5 container">
+                        <div class="row">
+                            <div class="col-md-5 ">
+                                
+                                    <div class=" card  mx-auto align-self-center thumbnail-list">
+                                        <img data-src="https://dvrs04bx77b2x.cloudfront.net/Midworks/item/image/normal/ee8ed302-81a6-45f5-b994-7ef2ced9e18c.jpg" class="img-fluid mb-2 image" alt="【2021年】PHPのおすすめフレームワークとその理由を解説" src="https://dvrs04bx77b2x.cloudfront.net/Midworks/item/image/normal/ee8ed302-81a6-45f5-b994-7ef2ced9e18c.jpg">
+    
+                                        <div class="p-3 text-midnight-blue font-weight-bold spacing">
+                                            <p>【2021年】PHPのおすすめフレームワークとその理由を解説</p>
+                                        </div>
+                                    
+                                </div>
+    
+                            </div>
+                            <div class="col-md-7 mb-4    smaller-text">
+
+                                <div class="py-3 border-bottom "><a class="list-style" href="/columns/freelance-career/engineers/1114801">【2021年】CSSのおすすめフレームワーク7つとその理由を解説</a></div>
+                                <div class="py-3 border-bottom"><a class="list-style" href="/columns/freelance-career/engineers/1114802">【2021年】Javaのおすすめフレームワークとその理由を解説</a></div>
+                                <div class="py-3 border-bottom"><a class="list-style" href="/columns/freelance-career/engineers/1114803">【2021年】JavaScriptのおすすめフレームワークとその理由を解説</a></div>
+                                <div class="py-3 border-bottom"><a class="list-style" href="/columns/freelance-career/engineers/1114804">【2021年】Pythonのおすすめフレームワークとその理由を解説</a></div>
+                                <div class="py-3 border-bottom"><a class="list-style" href="/columns/freelance-career/engineers/1114805">【2021年】Goのおすすめフレームワークとその理由を解説</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="new-project-button mt-5" href="">
+                        記事一覧へ<span class="ms-2"><i class="fa fa-chevron-right"></i></span>    
+                    </a>
+
+                </div>
+               
+            </section>
+
+            
+    </main>
+
+
+
+
+
+
+    <script>
+        function projectSearch(searchContent, elmnt) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            console.log(searchContent);
+            document.getElementById(searchContent).style.display = "block";
+        }
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- carosoul -->
+    <script>
+        let items = document.querySelectorAll('.carousel .carousel-item')
+
+        items.forEach((el) => {
+            const minPerSlide = 3;
+            let next = el.nextElementSibling
+            for (var i = 1; i < minPerSlide; i++) {
+                if (!next) {
+                    // wrap carousel by using first child
+                    next = items[0]
+                }
+                let cloneChild = next.cloneNode(true)
+                el.appendChild(cloneChild.children[0])
+                next = next.nextElementSibling
+            }
+        })
+    </script>
+</body>
+
+</html>
